@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sriram | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-xl sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center flex-wrap"> 
+            <a href="#home" class="text-xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-300">
+                Sriram
+            </a>
+            
+            <button id="menu-toggle" class="sm:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="hidden w-full sm:flex sm:items-center sm:w-auto">
+                <div class="sm:space-x-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 mt-3 sm:mt-0">
+                    <a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Home</a>
+                    <a href="#about-skills" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 sm:inline">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300 sm:inline">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section-padding text-center hero-svg-bg">
+            <div class="max-w-4xl mx-auto">
+                <div class="mx-auto w-32 h-32 bg-indigo-200 rounded-full flex items-center justify-center overflow-hidden mb-6 border-4 border-indigo-400 shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-indigo-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
+                    HELLO, I'M SRIRAM
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                    A Result-Oriented Web Developer building and managing Websites and Web Applications that leads to the success of the overall product                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#projects" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-indigo-700 transition duration-300 inline-flex items-center justify-center">
+                        Projects
+                    </a>
+                    <a href="assets/sriram_resume.pdf" target="_blank" class="bg-white border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition duration-300 inline-flex items-center justify-center">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-skills" class="section-padding bg-gray-100">
+            <div class="max-w-7xl mx-auto">               
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-gray-900">
+                        ABOUT ME
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-extrabold text-gray-900">
+                            Get to know me!
+                        </h3>
+                        
+                        <p class="text-lg text-gray-700">
+                            I’m a frontend-focused Web Developer passionate about building clean, responsive, and user-friendly interfaces. I create and maintain the front end of websites and web applications that directly contribute to product success. You can explore some of my work in the <strong>Projects</strong> section.                       
+                        <p class="text-lg text-gray-700">
+                            I enjoy building practical solutions that solve real-world problems. Over time, I have developed strong full-stack capabilities—specializing in backend development with <strong>Django </strong>and crafting modern, visually appealing UIs using <strong>Tailwind CSS</strong>.
+                        </p>
+                        <p class="text-lg text-gray-700">
+                            I'm open to <strong>Job</strong> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills then don't hesitate to <strong>contact</strong> me.                      
+                        </p>
+
+                        <a href="#contact" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-md font-bold shadow-lg hover:bg-indigo-700 transition duration-300">
+                            CONTACT
+                        </a>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-6">
+                            My Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge bg-blue-100 text-blue-800">Python</span>
+                            <span class="skill-badge bg-yellow-100 text-yellow-800">JavaScript (ES6+)</span>
+                            <span class="skill-badge bg-teal-100 text-teal-800">HTML5 / CSS3</span>
+                            <span class="skill-badge bg-teal-100 text-teal-800">Tailwind CSS</span>
+                            <span class="skill-badge bg-blue-100 text-blue-800">React</span>
+                            <span class="skill-badge bg-indigo-100 text-indigo-800">Django</span>
+                            <span class="skill-badge bg-green-100 text-green-800">PostgreSQL</span>
+                            <span class="skill-badge bg-gray-100 text-gray-800">Git / GitHub</span>
+                            <span class="skill-badge bg-red-100 text-red-800">Docker</span>
+                            <span class="skill-badge bg-pink-100 text-pink-800">R / Data Analysis</span>
+                            <span class="skill-badge bg-gray-100 text-gray-800">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-gray-900">
+                    PROJECTS
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div class="bg-white p-8 rounded-2xl card-shadow flex flex-col">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">🍽️ MessNet: Web-Based Mess Management System</h3>
+                        <p class="text-sm text-gray-500 mb-4 font-medium">HTML5, Tailwind CSS, JavaScript, Django (Python), SQLite </p>
+                        <p class="text-gray-700 flex-grow mb-4">
+                            MessNet is a <strong>full-stack</strong>, all-in-one mess automation platform built using Django. It modernizes hostel administration workflows by allowing students to manage their menu, leave requests, bills, feedback, and lost & found through an elegant, <strong>mobile-first interface</strong>.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-1 ml-4 text-sm">
+                            <li> <strong> Backend Depth: </strong> Implemented auto-generating bill adjustments based on approved leave days using <strong>Django</strong>.</li>
+                            <li><strong> User Experience: </strong> Features a clean, responsive UI with sleek layout built entirely using <strong> Tailwind CSS </strong>.</li>
+                            <li> <strong> Core Modules: </strong> Successfully managed and deployed multiple modules, including <strong> Weekly Food Menu</strong> and <strong> Real-Time Notifications</strong>.</li>
+                        </ul>
+                        <div class="mt-auto flex flex-wrap gap-4">
+                            <a href="https://messnet.pythonanywhere.com/" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-bold shadow-md hover:bg-indigo-700 transition duration-300 inline-flex items-center text-sm">
+                                Live Demo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="https://github.com/your-username/mess-management-system.git" target="_blank" class="text-gray-600 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-300 inline-flex items-center text-sm">
+                                View Code (GitHub)
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.57.81-2.43 2-2.43 1.18 0 2 0 2 2.43-.07 1.83.6 4.79-1.99 6.27-.93.57-1.8.85-2.63.94-.83.09-1.66.14-2.5.14s-1.67-.05-2.5-.14c-1.88-.19-3.79-1.4-4.87-3.26-1.08-1.86-1.5-4.2-1.5-6.6 0-1.57.81-2.43 2-2.43 1.18 0 2 0 2 2.43"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl card-shadow flex flex-col">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">⭐ Personal Portfolio Website (This Site)</h3>
+                        <p class="text-sm text-gray-500 mb-4 font-medium">HTML5, Tailwind CSS, Custom CSS, Vanilla JavaScript</p>
+                        <p class="text-gray-700 flex-grow mb-4">
+                            A clean, modern, and highly responsive single-page application built to showcase my technical skills, projects, and professional background. It is optimized for fast loading and cross-browser compatibility.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-700 mb-6 space-y-1 ml-4 text-sm">
+                            <li>**UI/UX:** Designed and styled completely using **Tailwind CSS** for rapid, utility-first development.</li>
+                            <li>**Custom Styling:** Implemented advanced features like custom utility classes (e.g., `.card-shadow`) and a subtle **SVG background overlay** using pure CSS.</li>
+                            <li>**Functionality:** Developed a **Vanilla JavaScript** module to handle simulated form submission and display interactive feedback messages.</li>
+                        </ul>
+                        <div class="mt-auto flex flex-wrap gap-4">
+                            <a href="#" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-bold shadow-md hover:bg-indigo-700 transition duration-300 inline-flex items-center text-sm">
+                                Live Demo (Current Site)
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="#" target="_blank" class="text-gray-600 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition duration-300 inline-flex items-center text-sm">
+                                View Code (GitHub)
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0-1.57.81-2.43 2-2.43 1.18 0 2 0 2 2.43-.07 1.83.6 4.79-1.99 6.27-.93.57-1.8.85-2.63.94-.83.09-1.66.14-2.5.14s-1.67-.05-2.5-.14c-1.88-.19-3.79-1.4-4.87-3.26-1.08-1.86-1.5-4.2-1.5-6.6 0-1.57.81-2.43 2-2.43 1.18 0 2 0 2 2.43"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding bg-indigo-800 text-white">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Let's Connect!</h2>
+                <p class="text-xl mb-8 text-indigo-200">
+                    I am actively seeking new opportunities and eager to discuss how my skills can contribute to your team.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-8 mb-10">
+                    <div class="flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-indigo-300"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:jane.doe@university.edu" class="text-white hover:text-indigo-200 font-medium transition duration-300">
+                            jane.doe@university.edu
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3 text-indigo-300"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://linkedin.com/in/janedoeintern" target="_blank" class="text-white hover:text-indigo-200 font-medium transition duration-300">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contactForm" action="#" method="POST" class="bg-indigo-700 p-8 rounded-xl shadow-2xl space-y-4 text-left">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Send a Quick Message</h3>
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-indigo-200 mb-1">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-indigo-200 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-indigo-200 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submitButton" class="w-full bg-white text-indigo-700 font-bold py-3 rounded-full hover:bg-indigo-100 transition duration-300 shadow-md">
+                        Send Message
+                    </button>
+                    <div id="feedbackMessage" class="text-center mt-4 hidden p-3 rounded-lg bg-green-500 text-white font-semibold"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20 items-start">
+
+                <div class="md:col-span-2"> 
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        SRIRAM
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-lg">
+                        A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product
+                    </p>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-white mb-4 md:text-right">
+                        SOCIAL
+                    </h3>
+                    <div class="flex md:justify-end space-x-4">
+                        <a href="https://linkedin.com/in/janedoeintern" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="feather feather-github">
+                                <path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.332-1.756-1.332-1.756-1.087-.745.084-.73.084-.73 1.205.084 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.775.42-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.225-.125-.3-.535-1.525.117-3.18 0 0 1.008-.323 3.301 1.232C10.027 5.6 11.025 5.518 12 5.518c.975 0 1.973.082 2.946.257 2.29-1.555 3.3-1.232 3.3-1.232.652 1.655.242 2.88.117 3.18.77.845 1.235 1.915 1.235 3.225 0 4.61-2.805 5.625-5.475 5.92.42.362.81 1.092.81 2.204 0 1.604-.015 2.894-.015 3.284 0 .32.22.69.825.57C20.565 21.8 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 py-4">
+            <p class="text-sm text-center text-gray-500">
+                © Copyright 2024. Built with Sriram.
+            </p>
+        </div>
+    </footer>
+   
+</body>
+
+<script src="script.js"></script>
+
+</html>

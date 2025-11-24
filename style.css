@@ -1,10 +1,4 @@
-    <!-- 
-        ========================================================================
-        CSS STYLES (for customization beyond standard Tailwind utility classes)
-        ========================================================================
-    -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -37,4 +31,34 @@
             margin: 0.25rem;
             transition: background-color 0.2s;
         }
-    </style>
+
+        .hero-svg-bg {
+            /* Keep existing background properties for the SVG */
+            background-image: url('assets/hero-bg.svg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f4ff; 
+
+            /* Essential for positioning the pseudo-element overlay */
+            position: relative; 
+            overflow: hidden; /* Ensures overlay doesn't spill out */
+        }
+
+        .hero-svg-bg::before {
+            content: ''; /* Required for pseudo-elements */
+            position: absolute; /* Position relative to the parent (.hero-svg-bg) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* This is the key: a semi-transparent white overlay */
+            background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+            z-index: 1; /* Place it above the background image */
+        }
+
+        /* Ensure content is above the overlay */
+        .hero-svg-bg > * { 
+            position: relative;
+            z-index: 2; /* Place content above the overlay */
+        }
