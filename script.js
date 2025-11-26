@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
 
-  // Function to display feedback message
   const showFeedback = (message, isSuccess = true) => {
     feedback.textContent = message;
-    // Dynamically set classes for success or error styling
     feedback.className = `text-center mt-4 p-3 rounded-lg font-semibold transition-opacity duration-500 ${
       isSuccess ? "bg-green-500 text-white" : "bg-red-500 text-white"
     }`;
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     submitButton.disabled = true;
     submitButton.textContent = "Sending...";
-
 
     setTimeout(() => {
       showFeedback(
