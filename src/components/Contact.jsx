@@ -21,33 +21,37 @@ export default function Contact() {
       .join('&');
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormStatus('sending');
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setFormStatus('sending');
 
-    const form = e.target;
-    const formData = new FormData(form);
+  const form = e.currentTarget;
+  const formData = new FormData(form);
 
-    fetch('/', {
+  try {
+    const response = await fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'contact',
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-      }),
-    })
-      .then(() => {
-        setFormStatus('success');
-        form.reset();
-        setTimeout(() => setFormStatus('idle'), 5000);
-      })
-      .catch((error) => {
-        console.error('Netlify Form Submit Error:', error);
-        setFormStatus('error');
-      });
-  };
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Netlify returned ${response.status}`);
+    }
+
+    setFormStatus('success');
+    form.reset();
+
+    setTimeout(() => {
+      setFormStatus('idle');
+    }, 5000);
+  } catch (error) {
+    console.error('Netlify Form Submit Error:', error);
+    setFormStatus('error');
+  }
+};
 
   return (
     <section id="contact" className="py-16 bg-[#070D1D] text-white relative overflow-hidden">

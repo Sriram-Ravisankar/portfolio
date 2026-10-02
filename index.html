@@ -23,12 +23,22 @@
   </head>
   <body class="bg-[#070D1D] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-['Inter',sans-serif]">
     
-    <!-- Netlify Forms Build-Time Detection Form -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-    </form>
+<!-- Netlify Forms Build-Time Detection -->
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  hidden
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+
+  <input type="text" name="bot-field" />
+</form>
 
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
