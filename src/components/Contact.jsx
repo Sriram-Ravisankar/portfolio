@@ -38,7 +38,7 @@ const handleSubmit = async (e) => {
     });
 
     if (!response.ok) {
-      throw new Error(`Netlify returned ${response.status}`);
+      throw new Error(`Submission failed: ${response.status}`);
     }
 
     setFormStatus('success');
@@ -47,8 +47,9 @@ const handleSubmit = async (e) => {
     setTimeout(() => {
       setFormStatus('idle');
     }, 5000);
+
   } catch (error) {
-    console.error('Netlify Form Submit Error:', error);
+    console.error('Netlify Form Error:', error);
     setFormStatus('error');
   }
 };
@@ -223,7 +224,7 @@ const handleSubmit = async (e) => {
 
               {formStatus === 'success' && (
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm text-center font-medium font-mono">
-                  ✓ Message sent successfully! Sriram will receive your details via Netlify & Gmail.
+                  ✓ Message sent successfully! Sriram will respond soon
                 </div>
               )}
 

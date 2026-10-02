@@ -2,45 +2,81 @@
 <html lang="en" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SRIRAM R | Full Stack Developer</title>
-    
-    <!-- Meta Descriptions & SEO -->
-    <meta name="description" content="Portfolio of Sriram R - Entry-level Full Stack Developer skilled in Python, Django, React, PHP, and MySQL. Building REST APIs, authentication, and database-driven web apps." />
-    <meta name="author" content="Sriram R" />
-    <meta name="keywords" content="Sriram R, Full Stack Developer, Django, React, PHP, MySQL, REST API, Python Developer, Render" />
 
-    <!-- Open Graph / Social -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>SRIRAM R | Full Stack Developer</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Portfolio of Sriram R - Entry-level Full Stack Developer skilled in Python, Django, React, PHP, and MySQL. Building REST APIs, authentication, and database-driven web apps."
+    />
+
+    <meta name="author" content="Sriram R" />
+
+    <meta
+      name="keywords"
+      content="Sriram R, Full Stack Developer, Django, React, PHP, MySQL, REST API, Python Developer, Render"
+    />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="SRIRAM R | Full Stack Developer" />
-    <meta property="og:description" content="Full Stack Web Developer skilled in Python, Django, React, PHP, and MySQL." />
-    
+    <meta
+      property="og:description"
+      content="Full Stack Web Developer skilled in Python, Django, React, PHP, and MySQL."
+    />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-[#070D1D] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-['Inter',sans-serif]">
-    
-<!-- Netlify Forms Build-Time Detection -->
-<form
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  hidden
->
-  <input type="hidden" name="form-name" value="contact" />
 
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-  <textarea name="message"></textarea>
+  <body
+    class="bg-[#070D1D] text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-['Inter',sans-serif]"
+  >
 
-  <input type="text" name="bot-field" />
-</form>
+    <!-- Netlify Forms Build-Time Detection -->
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
 
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+
+      <input type="text" name="bot-field" />
+    </form>
+
+    <!-- React Root -->
     <div id="root"></div>
+
+    <!-- React Entry -->
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 </html>
