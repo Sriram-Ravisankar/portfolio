@@ -5,8 +5,7 @@ import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
-  const [formStatus, setFormStatus] = useState('idle'); // 'idle' | 'sending' | 'success'
+  const [formStatus, setFormStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
 
   const email = 'sriramravisankar77@gmail.com';
 
@@ -16,20 +15,38 @@ export default function Contact() {
     setTimeout(() => setCopiedEmail(false), 3000);
   };
 
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText(phone);
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 3000);
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormStatus('sending');
-    setTimeout(() => {
-      setFormStatus('success');
-      e.target.reset();
-      setTimeout(() => setFormStatus('idle'), 5000);
-    }, 1200);
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+      }),
+    })
+      .then(() => {
+        setFormStatus('success');
+        form.reset();
+        setTimeout(() => setFormStatus('idle'), 5000);
+      })
+      .catch((error) => {
+        console.error('Netlify Form Submit Error:', error);
+        setFormStatus('error');
+      });
   };
 
   return (
@@ -40,7 +57,6 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-10">
-
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0B1528] border border-slate-800 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
             <MessageSquare className="w-3.5 h-3.5" /> Get In Touch
           </div>
@@ -63,28 +79,6 @@ export default function Contact() {
               <p className="text-slate-400 text-sm leading-relaxed">
                 Reach out directly via email, or connect with me on LinkedIn and GitHub.
               </p>
-
-              {/* Mobile Phone Card */}
-              {/* <div className="p-4 rounded-2xl bg-[#070D1D] border border-slate-800 flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0 border border-cyan-500/20">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs text-slate-400 block font-mono">Mobile / Phone</span>
-                    <a href={`tel:${phoneRaw}`} className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors">
-                      {phone}
-                    </a>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCopyPhone}
-                  className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0"
-                  title="Copy mobile number"
-                >
-                  {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                </button>
-              </div> */}
 
               {/* Email Card */}
               <div className="p-4 rounded-2xl bg-[#070D1D] border border-slate-800 flex items-center justify-between gap-3">
@@ -152,10 +146,16 @@ export default function Contact() {
               name="contact"
               method="POST"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="bg-[#0B1528] border border-slate-800 p-8 rounded-3xl space-y-5 shadow-2xl"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don’t fill this out if you’re human: <input name="bot-field" />
+                </label>
+              </p>
 
               <h3 className="text-2xl font-bold text-white mb-2 font-['Outfit']">
                 Send a Direct Message
@@ -219,7 +219,13 @@ export default function Contact() {
 
               {formStatus === 'success' && (
                 <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm text-center font-medium font-mono">
-                  ✓ Message sent successfully! Sriram will respond soon.
+                  ✓ Message sent successfully! Sriram will receive your details via Netlify & Gmail.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-sm text-center font-medium font-mono">
+                  ✕ Submission error. Please email sriramravisankar77@gmail.com directly.
                 </div>
               )}
             </form>
